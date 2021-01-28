@@ -1,0 +1,15 @@
+{
+  "name": "nodejs-rest-api",
+  "version": "1.0.0",
+  "description": "nodejs-rest-api",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
+  }
+}
