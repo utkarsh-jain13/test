@@ -1,7 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const mw = require('../../lib/middleware');
+const valid = require('../../lib/valid');
+const schema = require('../../config/schema.json');
 
-router.post('/users',mw.ageValidate, mw.nameValidate, mw.success);
+
+router.post('/users',(req, res, next)=>{
+    valid(req.body,schema.schema)
+});
 
 module.exports = router;

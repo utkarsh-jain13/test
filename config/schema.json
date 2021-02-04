@@ -1,0 +1,29 @@
+{
+    "schema": {
+        "type": "object",
+        "required": [
+            "name",
+            "email",
+            "password",
+            "age"
+        ],
+        "properties": {
+            "name": {
+                "type": "string",
+                "format": "nameValidate"
+            },
+            "email": {
+                "type": "string",
+                "format": "emailValidate"
+            },
+            "password": {
+                "type": "string",
+                "format": "passwordValidate"
+            },
+            "age": {
+                "type": "number",
+                "format": "positiveNumber"
+            }
+        }
+    }
+}
