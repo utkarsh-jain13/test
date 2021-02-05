@@ -1,7 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const mw = require('../../lib/valid');
+const getUser = require('../../controllers/getUser');
+const schema = require('../../config/schema.json');
+router.get('/users', (req, res, next) => {
 
-// router.get('/users', mw.ageValidate, mw.nameValidate, mw.success);
+});
 
-// module.exports = router;
+
+module.exports = router;
