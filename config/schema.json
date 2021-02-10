@@ -25,5 +25,39 @@
                 "format": "positiveNumber"
             }
         }
+    },
+    "schemaForUserUpdate": {
+        "type": "object",
+        "properties": {
+            "name": {
+                "type": "string",
+                "format": "nameValidate"
+            },
+            "email": {
+                "type": "string",
+                "format": "emailValidate"
+            },
+            "password": {
+                "type": "string",
+                "format": "passwordValidate"
+            },
+            "age": {
+                "type": "number",
+                "format": "positiveNumber"
+            }
+        }
+    },
+    "paramSchema": {
+        "type": "object",
+        "properties": {
+            "order": {
+                "type": "string",
+                "format": "orderBy"
+            },
+            "limit": {
+                "type": "string",
+                "format": "positiveNumber"
+            }
+        }
     }
 }

@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const valid = require('../../lib/valid');
+const { valid } = require('../../lib/valid');
 const CreateUser = require('../../controllers/CreateUser');
 const schema = require('../../config/schema.json');
 
