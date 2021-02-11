@@ -1,8 +1,21 @@
 const express = require('express');
 const router = express.Router();
 const GetUser = require('../../controllers/GetUser');
-const schema = require('../../config/schema.json');
 const { validParam } = require('../../lib/valid');
+
+let userParamSchema = {
+    "type": "object",
+    "properties": {
+        "order": {
+            "type": "string",
+            "format": "orderBy"
+        },
+        "limit": {
+            "type": "string",
+            "format": "positiveNumber"
+        }
+    }
+}
 
 router.get('/users/:id', (req, res, next) => {
     let data = req.params;
@@ -17,7 +30,7 @@ router.get('/users/:id', (req, res, next) => {
 
 router.get('/users', (req, res, next) => {
     let data = req.query;
-    if (validParam(data, schema.paramSchema)) {
+    if (validParam(data, userParamSchema)) {
         let getUser = new GetUser();
         let result;
         if (data.hasOwnProperty('sortBy')
