@@ -1,6 +1,7 @@
 const { Error } = require('mongoose');
 const { replaceOne } = require('../models/user');
 const UserModel = require('../models/user');
+const { BadRequest } = require('../utils/error');
 
 module.exports = class CreateUser {
     findExistingEmail(body) {
@@ -10,7 +11,7 @@ module.exports = class CreateUser {
                 .then((docs) => {
                     if (docs.length) {
                         message = 'Email Already Exist!';
-                        reject(message);
+                        reject(new BadRequest(message));
                     }
                     else{
                         resolve();

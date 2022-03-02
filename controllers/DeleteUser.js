@@ -1,4 +1,5 @@
 const UserModel = require('../models/user');
+const { BadRequest } = require('../utils/error');
 
 module.exports = class CreateUser {
     deleteUserById(param) {
@@ -18,7 +19,7 @@ module.exports = class CreateUser {
                     }
                     else {
                         message = 'Not Found!';
-                        reject(message);
+                        reject(new BadRequest(message));
                     }
                 })
                 .catch((err) => {

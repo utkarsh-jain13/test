@@ -1,5 +1,6 @@
 const { overSome } = require('lodash');
 const UserModel = require('../models/user');
+const { BadRequest } = require('../utils/error');
 
 module.exports = class CreateUser {
     getUserById(data) {
@@ -12,7 +13,7 @@ module.exports = class CreateUser {
                     }
                     else {
                         message = 'Not Found!';
-                        reject(message);
+                        reject(new BadRequest(message));
                     }
                 })
                 .catch((err) => {
@@ -36,7 +37,7 @@ module.exports = class CreateUser {
                     }
                     else {
                         message = 'Not Found!';
-                        reject(message);
+                        reject(new BadRequest(message));
                     }
                 })
                 .catch((err) => {
@@ -54,7 +55,7 @@ module.exports = class CreateUser {
                     }
                     else {
                         message = 'Not Found!';
-                        reject(message);
+                        reject(new BadRequest(message));
                     }
                 })
                 .catch((err) => {
