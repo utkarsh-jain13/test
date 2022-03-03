@@ -1,0 +1,12 @@
+{
+    "PORT": 3000,
+    "database": {
+        "development": {
+            "username": "root",
+            "password": "root",
+            "host": "localhost",
+            "port": "27017",
+            "dbName": "User"
+        }
+    }
+}
